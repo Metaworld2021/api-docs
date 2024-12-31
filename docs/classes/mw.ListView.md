@@ -671,7 +671,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 需要查找的数据所在位置 |
+| `index` `number` | 需要查找的数据所在位置 range: 无 type: 整形 |
 | :------ | :------ |
 
 #### Returns
@@ -717,7 +717,7 @@ ___
 
 | `newItem` [`ListViewItemDataBase`](mw.ListViewItemDataBase.md) | 需要插入的新数据 |
 | :------ | :------ |
-| `index` `number` | 插入的位置 |
+| `index` `number` | 插入的位置 range: 无 type: 整形 |
 
 
 ___
@@ -744,7 +744,7 @@ ___
 
 #### Parameters
 
-| `delIndex` `number` | 需要移除的数据所在位置 |
+| `delIndex` `number` | 需要移除的数据所在位置 range: 无 type: 整形 |
 | :------ | :------ |
 
 
@@ -797,8 +797,8 @@ ___
 
 | `selectedItems` [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)  [`ListViewItemDataBase`](mw.ListViewItemDataBase.md)[] | 需要修改选中的节点数据 |
 | :------ | :------ |
-| `selected` `boolean` | 确定修改目标：选中/不选中 |
-| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 |
+| `selected` `boolean` | 确定修改目标：选中/不选中 range:[true, false] |
+| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 default: SelectInfo.Direct |
 
 
 ___
@@ -813,8 +813,8 @@ ___
 
 | `selectedIndexs` `number`  `number`[] | 需要修改选中的节点所在索引 |
 | :------ | :------ |
-| `selected` `boolean` | 确定修改目标：选中/不选中 |
-| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 |
+| `selected` `boolean` | 确定修改目标：选中/不选中 range:[true, false] |
+| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 default: SelectInfo.Direct |
 
 
 ___
@@ -829,9 +829,9 @@ ___
 
 | `orientation` [`Orientation`](../enums/mw.Orientation.md) |  朝向 |
 | :------ | :------ |
-| `uiAssetGUID` `string` |  设置视图绑定的节点UI |
+| `uiAssetGUID` `string` |  设置视图绑定的节点UI range: 无 |
 | `parent?` [`Canvas`](mw.Canvas.md) | 创建控件的外parent对象 default:null |
-| `inName?` `string` | 创建控件的名称 default:null |
+| `inName?` `string` | 创建控件的名称 default:null range: 无 default:null |
 
 #### Returns
 

@@ -131,7 +131,7 @@
 | 获取选中节点的数据|
 | **[getShowItemsCount](mw.TreeView.md#getshowitemscount)**(): `number` <Badge type="tip" text="client" />  |
 | 获取当前展示的条目的数量|
-| **[insertItem](mw.TreeView.md#insertitem)**(`newItem`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md), `index`: `number`): `void` <Badge type="tip" text="other" />  |
+| **[insertItem](mw.TreeView.md#insertitem)**(`newItem`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md), `index`: `number`): `void` <Badge type="tip" text="client" />  |
 | 插入项目节点数据，如果位置越界，则自动插入最后|
 | **[regenerateTreeData](mw.TreeView.md#regeneratetreedata)**(`regenItems`: [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[]): `void` <Badge type="tip" text="client" />  |
 | 重新生成树刷新数据|
@@ -267,7 +267,7 @@ ___
 
 #### Parameters
 
-| `itemIndentAmount` `number` | 偏移量, 具体值需>=0, 负数无效果 |
+| `itemIndentAmount` `number` | 偏移量, 具体值需>=0, 负数无效果 range: [0, Inf) type: 整形 |
 | :------ | :------ |
 
 
@@ -791,14 +791,14 @@ ___
 
 #### Returns
 
-| `number` |  |
+| `number` | 当前展示的条目的数量 |
 | :------ | :------ |
 
 ___
 
 ### insertItem <Score text="insertItem" /> 
 
-• **insertItem**(`newItem`, `index`): `void` <Badge type="tip" text="other" />
+• **insertItem**(`newItem`, `index`): `void` <Badge type="tip" text="client" />
 
 插入项目节点数据，如果位置越界，则自动插入最后
 
@@ -806,7 +806,7 @@ ___
 
 | `newItem` [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md) | 需要插入的新数据 |
 | :------ | :------ |
-| `index` `number` | 插入的位置 |
+| `index` `number` | 插入的位置 range: 无 type: 整形 |
 
 
 ___
@@ -819,7 +819,7 @@ ___
 
 #### Parameters
 
-| `regenItems` | [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[] |
+| `regenItems` [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[] | 刷新数据 |
 | :------ | :------ |
 
 
@@ -901,8 +901,8 @@ ___
 
 | `selectedItems` [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)  [`TreeViewItemDataBase`](mw.TreeViewItemDataBase.md)[] | 需要修改选中的节点数据 |
 | :------ | :------ |
-| `selected` `boolean` | 确定修改目标：选中/不选中 |
-| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | - |
+| `selected` `boolean` | 确定修改目标：选中/不选中 range:[true, false] |
+| `selectInfo?` [`SelectInfo`](../enums/mw.SelectInfo.md) | 选中方式：键盘/导航/鼠标/直接选中 default: SelectInfo.Direct |
 
 
 ___
@@ -929,10 +929,10 @@ ___
 
 #### Parameters
 
-| `uiAssetGUID` `string` |  设置视图绑定的节点UI |
+| `uiAssetGUID` `string` |  设置视图绑定的节点UI range: 无 |
 | :------ | :------ |
 | `parent?` [`Canvas`](mw.Canvas.md) | 创建控件的外parent对象 default:null |
-| `inName?` `string` | 创建控件的名称 default:null |
+| `inName?` `string` | 创建控件的名称 default:null range: 无 |
 
 #### Returns
 

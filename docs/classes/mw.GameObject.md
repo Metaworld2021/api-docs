@@ -125,10 +125,8 @@ export default class GameObjectExample extends Script {
 
 
 ### Accessors <Score text="Accessors" /> 
-| **[actorFlagValue](mw.GameObject.md#actorflagvalue)**(): `number` <Badge type="tip" text="other" />  |
-| :-----|
-| 获取对象标记|
 | **[actorLevel](mw.GameObject.md#actorlevel)**(): `number` <Badge type="tip" text="other" />  |
+| :-----|
 | 获取Actor等级|
 | **[assetId](mw.GameObject.md#assetid)**(): `string`   |
 | 获取当前物体使用资源的GUID|
@@ -146,6 +144,8 @@ export default class GameObjectExample extends Script {
 | 获取当前物体同步状态|
 | **[parent](mw.GameObject.md#parent)**(): [`GameObject`](mw.GameObject.md)   |
 | 获取当前父物体|
+| **[sceneCaptureTag](mw.GameObject.md#scenecapturetag)**(): `string`   |
+| 获取当前物体的捕捉标签|
 | **[tag](mw.GameObject.md#tag)**(): `string`   |
 | 获取当前物体的标签|
 | **[worldTransform](mw.GameObject.md#worldtransform)**(): [`Transform`](mw.Transform.md)   |
@@ -186,11 +186,11 @@ export default class GameObjectExample extends Script {
 | **[getComponents](mw.GameObject.md#getcomponents)**<`T`: extends [`Script`](mw.Script.md)<`T`\>\>(`constructor?`: (...`args`: `unknown`[]) => `T`: extends [`Script`](mw.Script.md)<`T`\>): `T`: extends [`Script`](mw.Script.md)<`T`\>[]   |
 | 获取指定类型的所有组件|
 | **[getCustomProperties](mw.GameObject.md#getcustomproperties)**(): `string`[]   |
-| 获取所有自定义属性|
+| 获取自定义属性名字数组，返回对象所有自定义属性。|
 | **[getCustomProperty](mw.GameObject.md#getcustomproperty)**<`T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)\>(`propertyName`: `string`): `T`: extends [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)   |
-| 获取自定义属性|
-| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
-| 给定对象属性修改时触发的事件代理|
+| 获取自定义属性的值，服务器客户端均可调用，客户端调用需注意属性同步的延迟。|
+| **[getCustomPropertyChangeDelegate](mw.GameObject.md#getcustompropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
+| 获取给定自定义属性修改时触发的事件代理。双端对象在服务器修改自定义属性后，双端均会触发事件并执行绑定函数。|
 | **[getVisibility](mw.GameObject.md#getvisibility)**(): `boolean`   |
 | 获取物体是否被显示|
 | **[isPrefabActor](mw.GameObject.md#isprefabactor)**(): `boolean`   |
@@ -209,8 +209,8 @@ export default class GameObjectExample extends Script {
 | 在指定时间内从当前缩放平滑变化至目标缩放|
 | **[setAbsolute](mw.GameObject.md#setabsolute)**(`absolutePosition?`: `boolean`, `absoluteRotation?`: `boolean`, `absoluteScale?`: `boolean`): `void`   |
 | 设置物体localTransform是相对于父物体或者世界|
-| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void`   |
-| 设置自定义属性|
+| **[setCustomProperty](mw.GameObject.md#setcustomproperty)**(`propertyName`: `string`, `value`: `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype)): `void` <Badge type="tip" text="server" />  |
+| 设置自定义属性的值，双端对象需在服务器调用。当设置的属性不存在时会新增自定义属性。|
 | **[setVisibility](mw.GameObject.md#setvisibility)**(`status`: `boolean`  [`PropertyStatus`](../enums/mw.PropertyStatus.md), `propagateToChildren?`: `boolean`): `void`   |
 | 设置物体是否被显示|
 | **[stopMove](mw.GameObject.md#stopmove)**(): `void` <Badge type="tip" text="other" />  |
@@ -243,9 +243,9 @@ export default class GameObjectExample extends Script {
 
 ::: details click
 ### Methods <Score text="Methods" /> 
-| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
+| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
 | :-----|
-| 给定对象属性修改时触发的事件代理|
+| 获取给定对象属性修改时触发的事件代理。|
 :::
 
 
@@ -265,6 +265,10 @@ ___
 
 监听自定义属性同步事件
 
+<span style="font-size: 14px;">
+使用示例:监听自定义属性变化
+</span>
+
 ```ts
 this.onCustomPropertyChange.add((path, value, oldValue) => {
     console.log(`属性 ${path} 改变了，新值为 ${value}，旧值为 ${oldValue}`);
@@ -281,52 +285,6 @@ ___
 
 
 ## Accessors
-
-### actorFlagValue <Score text="actorFlagValue" /> 
-
-<table class="get-set-table">
-<thead><tr>
-<th style="text-align: left">
-
-• `get` **actorFlagValue**(): `number` <Badge type="tip" text="other" />
-
-</th>
-<th style="text-align: left">
-
-• `set` **actorFlagValue**(`v`): `void` <Badge type="tip" text="other" />
-
-</th>
-</tr></thead>
-<tbody><tr>
-<td style="text-align: left">
-
-
-获取对象标记
-
-#### Returns
-
-| `number` |  |
-| :------ | :------ |
-
-
-</td>
-<td style="text-align: left">
-
-
-设置对象标记
-
-#### Parameters
-
-| `v` | `number` |
-| :------ | :------ |
-
-
-
-</td>
-</tr></tbody>
-</table>
-
-___
 
 ### actorLevel <Score text="actorLevel" /> 
 
@@ -622,6 +580,52 @@ ___
 #### Parameters
 
 | `newParent` | [`GameObject`](mw.GameObject.md) |
+| :------ | :------ |
+
+
+
+</td>
+</tr></tbody>
+</table>
+
+___
+
+### sceneCaptureTag <Score text="sceneCaptureTag" /> 
+
+<table class="get-set-table">
+<thead><tr>
+<th style="text-align: left">
+
+• `get` **sceneCaptureTag**(): `string` 
+
+</th>
+<th style="text-align: left">
+
+• `set` **sceneCaptureTag**(`tag`): `void` 
+
+</th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: left">
+
+
+获取当前物体的捕捉标签
+
+#### Returns
+
+| `string` | Tag |
+| :------ | :------ |
+
+
+</td>
+<td style="text-align: left">
+
+
+设置当前物体的场景捕捉标签
+
+#### Parameters
+
+| `tag` `string` | Tag range: 无 |
 | :------ | :------ |
 
 
@@ -1051,12 +1055,16 @@ ___
 
 • **getCustomProperties**(): `string`[] 
 
-获取所有自定义属性
+获取自定义属性名字数组，返回对象所有自定义属性。
 
 #### Returns
 
 | `string`[] | 属性名列表 |
 | :------ | :------ |
+
+<span style="font-size: 14px;">
+使用示例:获取所有自定义属性
+</span>
 
 ```ts
 const attributes = this.getAttributes();
@@ -1070,11 +1078,11 @@ ___
 
 • **getCustomProperty**<`T`\>(`propertyName`): `T` 
 
-获取自定义属性
+获取自定义属性的值，服务器客户端均可调用，客户端调用需注意属性同步的延迟。
 
 #### Parameters
 
-| `propertyName` | `string` |
+| `propertyName` `string` | 属性名 range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -1091,13 +1099,13 @@ ___
 
 ### getCustomPropertyChangeDelegate <Score text="getCustomPropertyChangeDelegate" /> 
 
-• **getCustomPropertyChangeDelegate**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />
+• **getCustomPropertyChangeDelegate**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />
 
-给定对象属性修改时触发的事件代理
+获取给定自定义属性修改时触发的事件代理。双端对象在服务器修改自定义属性后，双端均会触发事件并执行绑定函数。
 
 #### Parameters
 
-| `property` `string` | 对象属性名字 |
+| `property` `string` | 对象属性名字 range: 不能为空 |
 | :------ | :------ |
 
 #### Returns
@@ -1172,7 +1180,7 @@ ___
 
 | `targetPosition` [`Vector`](mw.Vector.md) | 目标位置 |
 | :------ | :------ |
-| `time` `number` | 缓动时间 range: > 0 type: number |
+| `time` `number` | 缓动时间 range: > 0 type: 浮点数 |
 | `isLocal?` `boolean` | 是否本地空间生效 default:true |
 | `onComplete?` () => `void` | 完成回调方法 default:undefined |
 
@@ -1203,7 +1211,7 @@ ___
 
 | `rotation` [`Quaternion`](mw.Quaternion.md)  [`Rotation`](mw.Rotation.md) | 旋转速度 |
 | :------ | :------ |
-| `multiplier` `number` | 旋转乘数 range: > 0 type: number |
+| `multiplier` `number` | 旋转乘数 range: > 0 type: 浮点数 |
 | `isLocal?` `boolean` | 是否本地空间生效 default:true |
 
 
@@ -1231,7 +1239,7 @@ ___
 
 | `targetRotation` [`Quaternion`](mw.Quaternion.md)  [`Rotation`](mw.Rotation.md) | 目标朝向 |
 | :------ | :------ |
-| `time` `number` | 缓动时间 range: > 0 type: number |
+| `time` `number` | 缓动时间 range: > 0 type: 浮点数 |
 | `isLocal?` `boolean` | 是否本地空间生效 default:true |
 | `onComplete?` () => `void` | 完成回调方法 default:undefined |
 
@@ -1289,7 +1297,7 @@ ___
 
 | `targetScale` [`Vector`](mw.Vector.md) | 目标缩放 |
 | :------ | :------ |
-| `time` `number` | 缓动时间 range: > 0 type: number |
+| `time` `number` | 缓动时间 range: > 0 type: 浮点数 |
 | `isLocal?` `boolean` | 是否本地空间生效 default:true |
 | `onComplete?` () => `void` | 完成回调方法 default:undefined |
 
@@ -1330,15 +1338,15 @@ ___
 
 ### setCustomProperty <Score text="setCustomProperty" /> 
 
-• **setCustomProperty**(`propertyName`, `value`): `void` 
+• **setCustomProperty**(`propertyName`, `value`): `void` <Badge type="tip" text="server" />
 
-设置自定义属性
+设置自定义属性的值，双端对象需在服务器调用。当设置的属性不存在时会新增自定义属性。
 
 #### Parameters
 
-| `propertyName` `string` | - |
+| `propertyName` `string` | 属性名 range: 无 |
 | :------ | :------ |
-| `value` `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype) | 属性值 |
+| `value` `undefined`  [`CustomPropertyType`](../modules/Core.mw.md#custompropertytype) | 属性值 range: 无 |
 
 
 ___

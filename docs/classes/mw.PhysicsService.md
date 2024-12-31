@@ -229,7 +229,7 @@ ___
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 |
+| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 range: 无 |
 | `orientation` [`Rotation`](mw.Rotation.md) |  旋转大小 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
@@ -263,7 +263,7 @@ ___
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 |
+| `halfSize` [`Vector`](mw.Vector.md) |  盒形大小 range: 无 |
 | `orientation` [`Rotation`](mw.Rotation.md) |  旋转大小 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
@@ -293,8 +293,8 @@ ___
 
 | `capsulePos` [`Vector`](mw.Vector.md) | 检测位置 |
 | :------ | :------ |
-| `radius` `number` |  胶囊体半径 |
-| `halfHeight` `number` | 胶囊体半高 |
+| `radius` `number` |  胶囊体半径 range: 无 type: 浮点型 |
+| `halfHeight` `number` | 胶囊体半高 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 碰撞查询渲染参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -327,8 +327,8 @@ ___
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  胶囊体半径 |
-| `halfHeight` `number` |  胶囊体半高 |
+| `radius` `number` |  胶囊体半径 range: 无 type: 浮点型 |
+| `halfHeight` `number` |  胶囊体半高 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -361,8 +361,8 @@ ___
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  胶囊体半径 |
-| `halfHeight` `number` |  胶囊体半高 |
+| `radius` `number` |  胶囊体半径 range: 无 type: 浮点型 |
+| `halfHeight` `number` |  胶囊体半高 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -754,7 +754,7 @@ ___
 
 | `spherePos` [`Vector`](mw.Vector.md) | 检测位置 |
 | :------ | :------ |
-| `sphereRadius` `number` | 球半径 |
+| `sphereRadius` `number` | 球半径 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 碰撞查询渲染参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -787,7 +787,7 @@ ___
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  球形半径 |
+| `radius` `number` |  球形半径 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 
@@ -820,7 +820,7 @@ ___
 | `start` [`Vector`](mw.Vector.md) |  起始点 |
 | :------ | :------ |
 | `end` [`Vector`](mw.Vector.md) | 终止点 |
-| `radius` `number` |  球形半径 |
+| `radius` `number` |  球形半径 range: 无 type: 浮点型 |
 | `collisionParams` [`CollisionQueryParams`](../interfaces/mw.CollisionQueryParams.md) | 空间查询碰撞参数 |
 | `renderParams` [`RenderQueryParams`](../interfaces/mw.RenderQueryParams.md) | 空间查询渲染参数 |
 

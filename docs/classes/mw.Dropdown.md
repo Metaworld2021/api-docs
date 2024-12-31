@@ -125,12 +125,14 @@ Dropdown
 | 获取下拉顺序坐标|
 | **[getOptionByIndex](mw.Dropdown.md#getoptionbyindex)**(`index`: `number`): `string` <Badge type="tip" text="client" />  |
 | 菜单项内容|
-| **[getShowTextVisible](mw.Dropdown.md#getshowtextvisible)**(): `boolean` |
+| **[getShowTextVisible](mw.Dropdown.md#getshowtextvisible)**(): `boolean` <Badge type="tip" text="client" />  |
+| 获取显示的选中文本的可见性|
 | **[removeOption](mw.Dropdown.md#removeoption)**(`option`: `string`): `void` <Badge type="tip" text="client" />  |
 | 移除菜单项|
 | **[setOptionByIndex](mw.Dropdown.md#setoptionbyindex)**(`index`: `number`, `value`: `string`): `void` <Badge type="tip" text="client" />  |
 | 修改索引处的值|
-| **[setShowTextVisible](mw.Dropdown.md#setshowtextvisible)**(`bVisible`): `void` |
+| **[setShowTextVisible](mw.Dropdown.md#setshowtextvisible)**(`bVisible`: `boolean`): `void` <Badge type="tip" text="client" />  |
+| 设置显示的选中文本的可见性|
 | **[newObject](mw.Dropdown.md#newobject)**(`parent?`: [`Canvas`](mw.Canvas.md), `inName?`: `string`): [`Dropdown`](mw.Dropdown.md) <Badge type="tip" text="client" />  |
 | 创建Canvas控件 当parent和inName与已有的对象相同时，旧的对象会被销毁|
 
@@ -520,7 +522,7 @@ ___
 
 #### Parameters
 
-| `value` `string`[] |  传进来的字符串数组 <br> range: 不做限制，合理即可。 |
+| `value` `string`[] |  传进来的字符串数组 <br> range: 无 |
 | :------ | :------ |
 
 
@@ -593,7 +595,7 @@ ___
 
 #### Parameters
 
-| `value` `string` | 传进来的文本 |
+| `value` `string` | 传进来的文本 range: 无 |
 | :------ | :------ |
 
 
@@ -639,7 +641,7 @@ ___
 
 #### Parameters
 
-| `value` `number` | 设置的索引值 |
+| `value` `number` | 设置的索引值 range: 无 type: 整形 |
 | :------ | :------ |
 
 
@@ -687,7 +689,7 @@ ___
 
 #### Parameters
 
-| `option` `string` | 菜单项 <br> range: 不做限制，合理即可。 |
+| `option` `string` | 菜单项 <br> range: 无 |
 | :------ | :------ |
 
 
@@ -719,7 +721,7 @@ ___
 
 #### Parameters
 
-| `option` `string` | 菜单项 <br> range: 不做限制，合理即可。 |
+| `option` `string` | 菜单项 <br> range: 无 |
 | :------ | :------ |
 
 #### Returns
@@ -737,7 +739,7 @@ ___
 
 #### Parameters
 
-| `index` `number` | 下拉顺序坐标 <br> range: 不做限制，合理即可。 |
+| `index` `number` | 下拉顺序坐标 <br> range: 无 type: 整形 |
 | :------ | :------ |
 
 #### Returns
@@ -749,9 +751,14 @@ ___
 
 ### getShowTextVisible <Score text="getShowTextVisible" /> 
 
-• **getShowTextVisible**(): `boolean`
+• **getShowTextVisible**(): `boolean` <Badge type="tip" text="client" />
 
 获取显示的选中文本的可见性
+
+#### Returns
+
+| `boolean` | 文本的可见性 |
+| :------ | :------ |
 
 ___
 
@@ -763,9 +770,8 @@ ___
 
 #### Parameters
 
-| `option` `string` | 菜单项 <br> range: 不做限制，合理即可。 |
+| `option` `string` | 菜单项 <br> range: 无 |
 | :------ | :------ |
-
 
 
 ___
@@ -778,18 +784,24 @@ ___
 
 #### Parameters
 
-| `index` `number` |  索引 <br> range: 对应的索引值，不做限制。 <br> type: 整数 |
+| `index` `number` |  索引 <br> range: 对应的索引值，不做限制。 <br> type: 整形 |
 | :------ | :------ |
-| `value` `string` |  值 <br> range: 不做限制。 |
+| `value` `string` |  值 <br> range: 无 |
 
 
 ___
 
 ### setShowTextVisible <Score text="setShowTextVisible" /> 
 
-• **setShowTextVisible**(`bVisible`): `void`
+• **setShowTextVisible**(`bVisible`): `void` <Badge type="tip" text="client" />
 
 设置显示的选中文本的可见性
+
+#### Parameters
+
+| `bVisible` `boolean` |  自定义UI的GUID range: [true,false] |
+| :------ | :------ |
+
 
 ___
 
@@ -803,15 +815,9 @@ ___
 
 | `parent?` [`Canvas`](mw.Canvas.md) | 创建控件的外parent对象 default:null |
 | :------ | :------ |
-| `inName?` `string` | 创建控件的名称 default:null <br> range: 不做限制，合理即可。 |
+| `inName?` `string` | 创建控件的名称 default:null <br> range: 无 |
 
 #### Returns
 
 | [`Dropdown`](mw.Dropdown.md) | 返回创建的对象 |
 | :------ | :------ |
-
-
-| `bVisible` | `boolean` |
-| :------ | :------ |
-
-

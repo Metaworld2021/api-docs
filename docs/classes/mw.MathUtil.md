@@ -715,9 +715,9 @@ ___
 
 #### Parameters
 
-| `min` `number` | 最小值 range: 数据大小不做限制 type: 整数 |
+| `min` `number` | 最小值 range: 数据大小不做限制 type: 整形 |
 | :------ | :------ |
-| `max` `number` | 最大值 range: 数据大小不做限制 type: 整数 |
+| `max` `number` | 最大值 range: 数据大小不做限制 type: 整形 |
 
 #### Returns
 

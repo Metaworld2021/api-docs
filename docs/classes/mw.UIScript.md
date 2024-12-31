@@ -18,7 +18,7 @@ UI 的驱动脚本基类
 
 :cactus: 这里有详细的描述
 
-[LifeCycleandEventDescriptionofUIScripts](https://docs.ark.online/UI/LifeCycleandEventDescriptionofUIScripts.html)
+https://docs-028.ark.online/UI/LifeCycleandEventDescriptionofUIScripts.html
 
 3. 什么时候编辑器会帮你调用 UI 的生命周期呢？
 

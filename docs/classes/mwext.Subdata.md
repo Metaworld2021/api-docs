@@ -22,13 +22,13 @@
 
 2. 数据控制中心是如何工作的？
 
-数据上方标注的 @Decorator.persistence 装饰器有两个作用：
+数据上方标注的 @Decorator.saveProperty 装饰器有两个作用：
 
 - 让字段能够被永久存储（永久存储可以认为当退出游戏后，再次打开游戏，会存储上次游戏数据继续玩）
 
 - 让字段能够被同步到客户端
 
-- 没有标注 @Decorator.persistence 装饰器将丧失永久存储和同步至客户端的能力。
+- 没有标注 @Decorator.saveProperty 装饰器将丧失永久存储和同步至客户端的能力。
 
 3. 通过改写 ModuleService 中的示例，数据控制中心如何使用：
 

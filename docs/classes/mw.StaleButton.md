@@ -2267,11 +2267,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2298,11 +2298,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 字体 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 字体 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 字体 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 字体 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 字体 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 字体 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 字体 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 字体 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2329,11 +2329,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___
@@ -2360,11 +2360,11 @@ ___
 
 #### Parameters
 
-| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整数 |
+| `R` `number` | 颜色 R 值。 <br> range:[0, 255] type: 整形 |
 | :------ | :------ |
-| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整数 |
-| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整数 |
-| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整数 |
+| `G` `number` | 颜色 G 值。 <br> range:[0, 255] type: 整形 |
+| `B` `number` | 颜色 B 值。 <br> range:[0, 255] type: 整形 |
+| `A` `number` | 颜色 透明度。 <br> range:[0, 255] type: 整形 |
 
 
 ___

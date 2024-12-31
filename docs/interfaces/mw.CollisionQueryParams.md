@@ -1,4 +1,4 @@
-[mw](../modules/Core.mw.md) / CollisionQueryParams
+[玩法](../groups/玩法.玩法.md) / CollisionQueryParams
 
 # CollisionQueryParams <Badge type="tip" text="Interface" /> <Score text="CollisionQueryParams" />
 

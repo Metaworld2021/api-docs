@@ -137,9 +137,9 @@ onDestroy 植物的凋谢和结束阶段。当游戏对象被销毁或从场景�
 
 ::: details click
 ### Methods <Score text="Methods" /> 
-| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="other" />  |
+| **[getPropertyChangeDelegate](mw.Base.md#getpropertychangedelegate)**(`property`): `Readonly`<[`MulticastDelegate`](mw.MulticastDelegate.md)<(`path`: `string`, `value`: `unknown`, `oldValue`: `unknown`) => `void`\>\> <Badge type="tip" text="client" />  |
 | :-----|
-| 给定对象属性修改时触发的事件代理|
+| 获取给定对象属性修改时触发的事件代理。|
 :::
 
 
@@ -272,7 +272,7 @@ ___
 
 #### Returns
 
-| `boolean`  `void` |  |
+| `boolean`  `void` | 同步结果 |
 | :------ | :------ |
 
 ___

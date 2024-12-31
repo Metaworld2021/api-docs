@@ -18,6 +18,8 @@ mw
 | 动画模式|
 | [AppearanceType](../enums/mw.AppearanceType.md)  |
 | 形象类型|
+| [AspectRatioAxisConstraint](../enums/mw.AspectRatioAxisConstraint.md)  |
+| 横纵比约束|
 | [AssetIconSize](../enums/mw.AssetIconSize.md)  |
 | 图标的分辨率|
 | [AssetType](../enums/mw.AssetType.md)  |
@@ -74,8 +76,6 @@ mw
 | 拖拽的锚点|
 | [EdActorFlag](../enums/mw.EdActorFlag.md)  |
 | Actor在编辑器中的状态标记|
-| [EventType](../enums/mw.EventType.md)  |
-| :----- |
 | [ExpressionType](../enums/mw.ExpressionType.md)  |
 | 表情类型|
 | [FaceStyle](../enums/mw.FaceStyle.md)  |
@@ -96,7 +96,8 @@ mw
 | gizmo空间|
 | [GizmoSpaceType](../enums/mw.GizmoSpaceType.md)  |
 | gizmo空间|
-| [GraphicsLevel](../enums/Core.mw.GraphicsLevel.md) |
+| [GraphicsLevel](../enums/Core.mw.GraphicsLevel.md)  |
+| :----- |
 | [GravityMode](../enums/mw.GravityMode.md)  |
 | 重力模式|
 | [HideInEditorState](../enums/mw.HideInEditorState.md)  |
@@ -229,7 +230,8 @@ mw
 | 文本排列对齐规则|
 | [TextVerticalJustify](../enums/mw.TextVerticalJustify.md)  |
 | 文本排列垂直对齐规则|
-| [TextureFormat](../enums/mw.TextureFormat.md) |
+| [TextureFormat](../enums/mw.TextureFormat.md)  |
+| 贴图格式|
 | [TouchInputType](../enums/mw.TouchInputType.md)  |
 | 触摸类型|
 | [TriggerShapeType](../enums/mw.TriggerShapeType.md)  |
@@ -431,6 +433,8 @@ mw
 | 列表视图|
 | [ListViewItemDataBase](../classes/mw.ListViewItemDataBase.md)  |
 | 列表视图节点数据基类|
+| [LocaleUtil](../classes/mw.LocaleUtil.md)  |
+| 本地化工具|
 | [Margin](../classes/mw.Margin.md)  |
 | 基础的边距，提供4个方向的数值修改|
 | [Mask](../classes/mw.Mask.md)  |
@@ -465,6 +469,8 @@ mw
 | 寻路|
 | [ObjectLauncher](../classes/mw.ObjectLauncher.md)  |
 | 投掷物发射器|
+| [PanelWidget](../classes/Core.mw.PanelWidget.md)  |
+| :----- |
 | [ParticleEmitter](../classes/mw.ParticleEmitter.md)  |
 | 粒子特效|
 | [Pawn](../classes/mw.Pawn.md)  |
@@ -505,6 +511,8 @@ mw
 | 房间设置|
 | [Rotation](../classes/mw.Rotation.md)  |
 | 欧拉角|
+| [RouteService](../classes/mw.RouteService.md)  |
+| 游戏管理器|
 | [ScreenUtil](../classes/mw.ScreenUtil.md)  |
 | 屏幕视口工具|
 | [Script](../classes/mw.Script.md)  |
@@ -539,8 +547,7 @@ mw
 | 字符串工具|
 | [SubStance](../classes/mw.SubStance.md)  |
 | 二级姿态|
-| [SwimmingVolume](../classes/Core.mw.SwimmingVolume.md)  |
-| :----- |
+| [SwimmingVolume](../classes/Core.mw.SwimmingVolume.md) |
 | [SystemUtil](../classes/mw.SystemUtil.md)  |
 | 状态信息获取工具|
 | [TabGroup](../classes/mw.TabGroup.md)  |
@@ -689,6 +696,8 @@ mw
 | 外观加载完成委托|
 | **[OnKeyConsume](Core.mw.md#onkeyconsume)**: (`player`: [`Player`](../classes/mw.Player.md), `orderId`: `string`, `boxId`: `string`, `amount`: `number`, `confirmOrder`: (`bReceived`: `boolean`) => `void`) => `void`  |
 | 大会员钥匙扣除服务端接收发货通知的消息格式|
+| **[OnLoadDescriptionFailed](Core.mw.md#onloaddescriptionfailed)**: (`Character`: [`Character`](../classes/mw.Character.md)) => `void`  |
+| 外观主体（前发，后发，头，上衣，下衣，手套，鞋）加载失败委托|
 | **[OnMovementModeChange](Core.mw.md#onmovementmodechange)**: (`mode`: [`MovementMode`](../enums/mw.MovementMode.md)) => `void`  |
 | 移动状态切换委托|
 | **[OnOrderDelivered](Core.mw.md#onorderdelivered)**: (`playerId`: `number`, `orderId`: `string`, `commodityId`: `string`, `amount`: `number`, `confirmOrder`: (`bReceived`: `boolean`, `message?`: `string`) => `void`) => `void`  |
@@ -849,7 +858,7 @@ mw
 | 将局部坐标转换为绝对坐标,绝对坐标可以是桌面空间，也可以是窗口空间，这取决于小部件层次结构的根所在的空间。|
 | **[localToViewport](Core.mw.md#localtoviewport)**(`geometry`: [`Geometry`](../classes/mw.Geometry.md), `localPosition`: [`Vector2`](../classes/mw.Vector2.md), `outPixelPosition`: [`Vector2`](../classes/mw.Vector2.md), `outViewportPosition`: [`Vector2`](../classes/mw.Vector2.md)): `void` <Badge type="tip" text="client" />  |
 | 将几何体的局部坐标转换为局部视口坐标。|
-| **[releaseTextureFromCache](Core.mw.md#releasetexturefromcache)**(`data`: `string`): `void` <Badge type="tip" text="client" />  |
+| **[releaseTextureFromCache](Core.mw.md#releasetexturefromcache)**(`id`: `string`): `void` <Badge type="tip" text="client" />  |
 | 尝试标记资源的ICON或则一个URL地址用于释放本地缓存的资源数据|
 | **[screenToViewport](Core.mw.md#screentoviewport)**(`screenPosition`: [`Vector2`](../classes/mw.Vector2.md)): [`Vector2`](../classes/mw.Vector2.md) <Badge type="tip" text="client" />  |
 | 将屏幕位置(以像素为单位)转换为视口控件的本地空间。|
@@ -1246,6 +1255,33 @@ ___
 | `boxId` `string` |  宝箱Id |
 | `amount` `number` |  数量 |
 | `confirmOrder` (`bReceived`: `boolean`) => `void` |  是否收到货的回调，会发给订单服务器。如果回调false，服务器会认定未收到货，下次玩家进入游戏，还会收到该通知 |
+
+##### Returns
+
+`void`
+
+___
+
+### OnLoadDescriptionFailed <Score text="OnLoadDescriptionFailed" /> 
+
+Ƭ **OnLoadDescriptionFailed**: (`Character`: [`Character`](../classes/mw.Character.md)) => `void`
+
+#### Type declaration
+
+• (`Character`): `void`
+
+外观主体（前发，后发，头，上衣，下衣，手套，鞋）加载失败委托
+
+::: warning Precautions
+
+当角色外观加载失败时执行绑定函数
+
+:::
+
+##### Parameters
+
+| `Character` | [`Character`](../classes/mw.Character.md) |
+| :------ | :------ |
 
 ##### Returns
 
@@ -1986,7 +2022,7 @@ ___
 
 #### Parameters
 
-| `UIPrefabName` `string` | 指定 UI 自定义控件的相对于工程的路径或则相对于 UI 目录的路径 |
+| `UIPrefabName` `string` | 指定 UI 自定义控件的相对于工程的路径或则相对于 UI 目录的路径 range: 无 |
 | :------ | :------ |
 | `panelClass` () => `T` | 继承至 UI 身上脚本的派生类 |
 
@@ -2216,7 +2252,7 @@ ___
 
 | `asset` `string` | 指定资源的 id range: 依据资源 ID 长度而定。 |
 | :------ | :------ |
-| `size?` [`AssetIconSize`](../enums/mw.AssetIconSize.md) | 指定资源的分辨率尺寸 |
+| `size?` [`AssetIconSize`](../enums/mw.AssetIconSize.md) | 指定资源的分辨率尺寸 default: AssetIconSize.Icon_128px |
 
 #### Returns
 
@@ -2507,13 +2543,13 @@ ___
 
 ### releaseTextureFromCache <Score text="releaseTextureFromCache" /> 
 
-• **releaseTextureFromCache**(`data`): `void` <Badge type="tip" text="client" />
+• **releaseTextureFromCache**(`id`): `void` <Badge type="tip" text="client" />
 
 尝试标记资源的ICON或则一个URL地址用于释放本地缓存的资源数据
 
 #### Parameters
 
-| `data` | `string` |
+| `id` `string` | 指定资源的 id range: 依据资源 ID 长度而定。 |
 | :------ | :------ |
 
 

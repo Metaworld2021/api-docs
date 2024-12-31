@@ -13,6 +13,7 @@ Enums
 | [AnimationBlendMode](enums/mw.AnimationBlendMode.md) | 动画曲线 | [角色系统](groups/角色系统.角色系统.md) |
 | [AnimationMode](enums/mw.AnimationMode.md) | 动画模式 | [动画](groups/动画.动画.md) |
 | [AppearanceType](enums/mw.AppearanceType.md) | 形象类型 | [角色系统](groups/角色系统.角色系统.md) |
+| [AspectRatioAxisConstraint](enums/mw.AspectRatioAxisConstraint.md) | 横纵比约束 | [玩法](groups/玩法.玩法.md) |
 | [AssetIconSize](enums/mw.AssetIconSize.md) | 图标的分辨率 | [界面](groups/界面.界面.md) |
 | [AssetType](enums/mw.AssetType.md) | 资源类型 | [基础类型](groups/基础类型.基础类型.md) |
 | [AttenuationDistanceModel](enums/mw.AttenuationDistanceModel.md) | 音效衰减函数模型 | [场景](groups/场景.场景.md) |
@@ -204,6 +205,7 @@ Enums
 | [TextCommit](enums/mw.TextCommit.md) | 输入提交模式 | [界面](groups/界面.界面.md) |
 | [TextJustify](enums/mw.TextJustify.md) | 文本排列对齐规则 | [界面](groups/界面.界面.md) |
 | [TextVerticalJustify](enums/mw.TextVerticalJustify.md) | 文本排列垂直对齐规则 | [界面](groups/界面.界面.md) |
+| [TextureFormat](enums/mw.TextureFormat.md) | 贴图格式 | [基础类型](groups/基础类型.基础类型.md) |
 | [TouchInputType](enums/mw.TouchInputType.md) | 触摸类型 | [输入](groups/输入.输入.md) |
 | [TriggerShapeType](enums/mw.TriggerShapeType.md) | 碰撞形状 | [玩法](groups/玩法.玩法.md) |
 
